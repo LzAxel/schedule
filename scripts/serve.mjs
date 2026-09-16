@@ -16,7 +16,8 @@ const files = new Map([
   ["/schedule.js", ["schedule.js", "text/javascript; charset=utf-8"]],
   ["/app.js", ["app.js", "text/javascript; charset=utf-8"]],
   ["/site.js", ["site.js", "text/javascript; charset=utf-8"]],
-  ["/icons.svg", ["icons.svg", "image/svg+xml"]]
+  ["/icons.svg", ["icons.svg", "image/svg+xml"]],
+  ["/favicon.svg", ["favicon.svg", "image/svg+xml"]]
 ]);
 
 if (!Number.isInteger(port) || port < 1 || port > 65535) {

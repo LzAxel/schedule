@@ -11,7 +11,7 @@ const budget = 14_000;
 await rm(output, { recursive: true, force: true });
 await mkdir(output);
 
-const [javascript, stylesheet, sourceHtml, sourceIcons] = await Promise.all([
+const [javascript, stylesheet, sourceHtml, sourceIcons, sourceFavicon] = await Promise.all([
   build({
     stdin: {
       contents: 'import "./schedule.js"; import "./app.js";',
@@ -38,7 +38,8 @@ const [javascript, stylesheet, sourceHtml, sourceIcons] = await Promise.all([
     write: false
   }),
   readFile(join(root, "index.html"), "utf8"),
-  readFile(join(root, "icons.svg"), "utf8")
+  readFile(join(root, "icons.svg"), "utf8"),
+  readFile(join(root, "favicon.svg"), "utf8")
 ]);
 
 const scripts = /<script src="schedule\.js" defer><\/script>\s*<script src="app\.js" defer><\/script>/;
@@ -48,11 +49,13 @@ const html = sourceHtml
   .replace(/>\s+</g, "><")
   .trim();
 const icons = sourceIcons.replace(/>\s+</g, "><").trim();
+const favicon = sourceFavicon.replace(/>\s+</g, "><").trim();
 const files = new Map([
   ["index.html", Buffer.from(html)],
   ["styles.css", stylesheet.outputFiles[0].contents],
   ["site.js", javascript.outputFiles[0].contents],
-  ["icons.svg", Buffer.from(icons)]
+  ["icons.svg", Buffer.from(icons)],
+  ["favicon.svg", Buffer.from(favicon)]
 ]);
 
 await Promise.all([...files].map(([name, content]) => writeFile(join(output, name), content)));
