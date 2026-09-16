@@ -1,0 +1,42 @@
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:#17251f;background:#f5f3ed;font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;min-width:320px}
+button,a{-webkit-tap-highlight-color:transparent}
+button{font:inherit;cursor:pointer}
+a{color:inherit;text-decoration:none}
+.site-shell{max-width:1500px;margin:auto;padding:0 48px}
+h3,p{margin:0}
+.schedule-section{padding-top:24px;padding-bottom:70px}
+.week-toolbar{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 26px;background:#1e382f;border-radius:17px;color:#f7f8f1}
+.week-navigation,.week-actions{display:flex;align-items:center;gap:16px}
+.icon-button{width:48px;height:48px;flex:none;display:grid;place-items:center;border:1px solid #4d665b;border-radius:11px;background:transparent;color:#fff;transition:background .2s,border-color .2s,transform .2s}
+.icon-button svg{width:22px;height:22px;display:block}
+.icon-button:active{transform:scale(.94)}
+.icon-button:hover{background:#365248;border-color:#a7c59e}.icon-button:focus-visible,.today-button:focus-visible,.day-link:focus-visible{outline:3px solid #d4f586;outline-offset:3px}
+.week-name{min-width:250px;display:flex;flex-direction:column;gap:3px}.week-name strong{font-size:22px;letter-spacing:-.04em}.week-name span{color:#abc0b1;font-size:13px}
+.week-badge{padding:10px 15px;border-radius:100px;font-size:13px;font-weight:800;white-space:nowrap}.week-badge.even{background:#d9f5a7;color:#234334}.week-badge.odd{background:#ffd9bd;color:#794124}
+.today-button{border:none;border-radius:9px;background:#f4f4ed;color:#294035;padding:12px 19px;font-size:14px;font-weight:800;transition:background .2s}.today-button:hover{background:#d8edc7}
+.day-nav{display:flex;gap:9px;overflow-x:auto;padding:20px 0 18px;scrollbar-width:none}.day-nav::-webkit-scrollbar{display:none}
+.day-link{min-width:60px;padding:11px 17px;border:1px solid #dde1d8;border-radius:9px;text-align:center;color:#68776c;background:#f9faf4;font-size:14px;font-weight:800;transition:background .2s,color .2s,border-color .2s}
+.day-link:hover,.day-link.is-today{background:#d8edb7;border-color:#bdd895;color:#2c4938}
+.days-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:16px}
+.day-card{min-width:0;scroll-margin-top:22px;overflow:hidden;border:1px solid #e2e5dc;background:#fffefa;border-radius:15px;box-shadow:0 3px 14px rgba(42,55,41,.025)}
+.day-card.is-today{border-color:#a7cd7c;box-shadow:0 0 0 2px #d6ebbd}
+.day-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:21px 23px;border-bottom:1px solid #eceee8}
+.day-title-wrap{display:flex;align-items:center;gap:17px}.day-index{align-self:stretch;padding-right:17px;border-right:1px solid #e2e7da;color:#9dae9d;font-size:14px;font-weight:800;letter-spacing:.02em;display:flex;align-items:center}
+.day-title{font-size:21px;font-weight:800;letter-spacing:-.045em}.day-date{font-size:14px;color:#8a988e}
+.today-dot{padding:7px 10px;border-radius:100px;color:#356141;background:#e4f5d3;font-size:12px;font-weight:800}
+.lesson-list{padding:6px 15px 15px}.lesson-card{display:grid;grid-template-columns:96px minmax(0,1fr);border-bottom:1px solid #eceee8}.lesson-card:last-child{border-bottom:none}
+.lesson-time{display:flex;flex-direction:column;align-items:flex-start;padding:21px 11px 18px 9px;line-height:1.2}
+.period-number{margin-bottom:8px;color:#d1704d;text-transform:uppercase;font-size:12px;font-weight:800;letter-spacing:.04em}.start-time{font-size:23px;letter-spacing:-.055em}.end-time{margin-top:3px;color:#7e9182;font-size:15px}
+.lesson-content{min-width:0;padding:20px 10px 20px 20px;border-left:1px solid #edf0e9}
+.lesson-subject{display:block;font-size:17px;line-height:1.4;letter-spacing:-.02em;font-weight:800;overflow-wrap:anywhere}
+.lesson-meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:10px}.lesson-type{display:inline-block;padding:4px 7px;border-radius:4px;background:#eaf0e4;color:#56715a;font-size:12px;font-weight:800;white-space:nowrap}.lesson-teacher{color:#68796d;font-size:14px;line-height:1.45}
+.lesson-location{display:flex;align-items:flex-start;gap:6px;margin-top:11px;color:#4d6b54;font-size:13px;font-weight:700;line-height:1.5}.location-icon{width:15px;height:15px;flex:none;color:#90ae91;margin-top:2px}
+.lesson-card.is-split .lesson-content{padding:9px}.lesson-variant{padding:11px 12px;border-radius:8px}.lesson-variant+.lesson-variant{margin-top:5px}.lesson-variant.is-active{background:#eaf5de;box-shadow:inset 3px 0 #9ecf70}.lesson-variant.is-inactive{opacity:.65;background:#f5f5f0}.lesson-variant.is-active .lesson-location{color:#4c7053}
+.variant-label{display:block;margin-bottom:7px;color:#729266;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.03em}.is-inactive .variant-label{color:#839087}.empty-variant{display:block;color:#8d9a8e;font-size:13px;font-weight:600}
+.day-off{min-height:200px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;color:#86998a;text-align:center;font-size:13px}.day-off strong{color:#607768;font-size:16px}.off-sun{width:36px;height:36px;color:#c2d4af;margin-bottom:3px}
+@media(max-width:1100px){.site-shell{padding:0 32px}}
+@media(max-width:760px){.site-shell{padding:0 18px}.schedule-section{padding-top:15px;padding-bottom:45px}.week-toolbar{padding:17px;align-items:stretch;flex-direction:column;gap:16px}.week-navigation{justify-content:space-between;gap:9px}.week-name{min-width:0;flex:1;text-align:center}.week-name strong{font-size:18px}.week-actions{justify-content:space-between}.days-grid{grid-template-columns:1fr;gap:12px}.day-card{scroll-margin-top:14px}.day-nav{position:sticky;top:0;z-index:10;background:#f5f3ed;padding:14px 0 12px}.day-link{min-width:54px;padding:10px 14px}}
+@media(max-width:390px){.site-shell{padding:0 13px}.lesson-card{grid-template-columns:78px minmax(0,1fr)}.lesson-time{padding-left:3px;padding-right:5px}.lesson-content{padding-left:13px}.start-time{font-size:20px}.day-heading{padding:18px}.week-name strong{font-size:16px}.lesson-subject{font-size:16px}}
+@media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
